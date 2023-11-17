@@ -27,7 +27,7 @@ _This react application is for tracking the inventory of a tea shop. Different v
 
 ## Component Diagram
 
-![Component Diagram](src/img/TeaShopComponents.png "Component Diagram")
+![Component Diagram](src/img/Tea.png "Component Diagram")
 
 ## Known Bugs
 
