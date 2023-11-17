@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import TeaList from "./TeaList";
+import TeaControl from "./TeaControl";
 
 
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <React.Fragment>
       <Header />
-      <TeaList />
+      <TeaControl />
     </React.Fragment>
   );
 }
