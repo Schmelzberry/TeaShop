@@ -1,20 +1,36 @@
-import React  from "react";
+import React from "react";
 import NewTeaForm from './NewTeaForm'
 import TeaList from "./TeaList";
 
 
 class TeaControl extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      formVisible: false
+    };
   }
 
-  render(){
+  handleClick = () => {
+    this.setState({formVisible: true});
+  }
+
+  render() {
+    let currentlySeen = null;
+    let addTeaBtn = null;
+
+    if (this.state.formVisible) {
+      currentlySeen = <NewTeaForm />
+    }
+    else {
+      currentlySeen = <TeaList />
+      addTeaBtn = <button onClick={this.handleClick}>Add New Tea</button>
+    }
     return (
       <React.Fragment>
-        <TeaList/>
-        <NewTeaForm/>
+        {currentlySeen}
+        {addTeaBtn}
       </React.Fragment>
     );
   }
