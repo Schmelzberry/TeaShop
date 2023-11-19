@@ -9,6 +9,7 @@ function Tea(props){
         <p>{props.origin}</p>
         <p>{props.price}</p>
         <p>{props.type}</p>
+        <p>Quantity: {props.quantity}</p>
         <hr/>
       </div>
     </React.Fragment>
@@ -20,7 +21,12 @@ Tea.propTypes = {
   origin: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   type: PropTypes.string,
+  quantity: PropTypes.number,
   whenTeaClicked: PropTypes.func
+};
+
+Tea.defaultProps = {
+  quantity: 130,
 };
 
 export default Tea;

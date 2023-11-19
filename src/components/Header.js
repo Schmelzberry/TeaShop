@@ -2,7 +2,7 @@ import React from "react";
 
 function Header(){
   return (
-    <h1>Tea Shop</h1>
+    <h1>WBZ(Whaddup Boiz) Tea Shop</h1>
   );
 }
 
