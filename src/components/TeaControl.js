@@ -8,7 +8,8 @@ class TeaControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisible: false
+      formVisible: false,
+      mainTeaList: []
     };
   }
 
@@ -28,7 +29,7 @@ class TeaControl extends React.Component {
       btnText = "Return to Tea List";
     }
     else {
-      currentlySeen = <TeaList />
+      currentlySeen = <TeaList teaList={this.state.mainTeaList}/>;
       btnText = "Add Tea";
     }
     return (
