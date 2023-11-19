@@ -13,7 +13,10 @@ class TeaControl extends React.Component {
   }
 
   handleClick = () => {
-    this.setState({formVisible: true});
+  
+    this.setState(prevState => ({
+      formVisible: !prevState.formVisible
+    }));
   }
 
   render() {
