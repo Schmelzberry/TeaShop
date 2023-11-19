@@ -21,19 +21,20 @@ class TeaControl extends React.Component {
 
   render() {
     let currentlySeen = null;
-    let addTeaBtn = null;
+    let btnText = null;
 
     if (this.state.formVisible) {
-      currentlySeen = <NewTeaForm />
+      currentlySeen = <NewTeaForm />;
+      btnText = "Return to Tea List";
     }
     else {
       currentlySeen = <TeaList />
-      addTeaBtn = <button onClick={this.handleClick}>Add New Tea</button>
+      btnText = "Add Tea";
     }
     return (
       <React.Fragment>
         {currentlySeen}
-        {addTeaBtn}
+        <button onClick={this.handleClick}>{btnText}</button>
       </React.Fragment>
     );
   }
