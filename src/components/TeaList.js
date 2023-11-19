@@ -11,9 +11,6 @@ function TeaList(props) {
        whenTeaClicked = { props.onTeaSelection }
       
        name={tea.name}
-       origin={tea.origin}
-       price={tea.price}
-       type={tea.type}
        id={tea.id}
        key={tea.id}
        />
