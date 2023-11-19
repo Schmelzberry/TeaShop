@@ -11,7 +11,8 @@ class TeaControl extends React.Component {
     this.state = {
       formVisible: false,
       mainTeaList: [],
-      selectedTea: null
+      selectedTea: null,
+      editing: false
     };
   }
 
@@ -40,6 +41,19 @@ class TeaControl extends React.Component {
     const selectedTea = this.state.mainTeaList.filter(tea => tea.id === id)[0];
     this.setState({selectedTea: selectedTea});
   }
+  
+  handleDeletingTea = (id) => {
+    const newMainTeaList = this.state.mainTeaList.filter(tea => tea.id !== id);
+    this.setState({
+      mainTeaList: newMainTeaList,
+      selectedTea: null
+    });
+  }
+
+  handleEditClick = () => {
+    console.log("handleEditClick reached!");
+    this.setState({editing: true});
+  }
   // Conditional Rendering
 
   render() {
@@ -47,7 +61,7 @@ class TeaControl extends React.Component {
     let btnText = null;
 
     if (this.state.selectedTea != null) {
-      currentlySeen = <TeaDetail tea = {this.state.selectedTea} />
+      currentlySeen = <TeaDetail tea = {this.state.selectedTea} onClickingDelete = {this.handleDeletingTea} onClickingEdit = {this.handleEditClick} />
       btnText= "Return to Tea List";
     }
 
@@ -56,7 +70,8 @@ class TeaControl extends React.Component {
         btnText = "Return to Tea List";
     }
     else {
-      currentlySeen = <TeaList teaList={this.state.mainTeaList} onTeaSelection={this.handleChangingSelectedTea}/>;
+      currentlySeen = 
+      <TeaList teaList={this.state.mainTeaList} onTeaSelection={this.handleChangingSelectedTea}/>;
       btnText = "Add Tea";
     }
     return (
