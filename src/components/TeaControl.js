@@ -20,13 +20,19 @@ class TeaControl extends React.Component {
     }));
   }
 
+  handleNewTea = (NewTea) => {
+    const newMainTeaList = this.state.mainTeaList.concat(NewTea);
+    this.setState({mainTeaList: newMainTeaList,
+    formVisible: false});
+  }
+
   render() {
     let currentlySeen = null;
     let btnText = null;
 
     if (this.state.formVisible) {
-      currentlySeen = <NewTeaForm />;
-      btnText = "Return to Tea List";
+      currentlySeen = <NewTeaForm onNewTeaCreation={this.handleNewTea} />
+        btnText = "Return to Tea List";
     }
     else {
       currentlySeen = <TeaList teaList={this.state.mainTeaList}/>;

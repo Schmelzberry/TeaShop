@@ -1,13 +1,18 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { v4 } from 'uuid';
 
-function NewTeaForm(){
+function NewTeaForm(props){
 
   function handleNewTeaSubmission(event) {
     event.preventDefault();
-    console.log(event.target.name.value);
-    console.log(event.target.origin.value);
-    console.log(event.target.price.value);
-    console.log(event.target.type.value);
+    props.onNewTeaCreation({
+      name: event.target.name.value,
+      origin: event.target.origin.value,
+      price: event.target.price.value,
+      type: event.target.type.value,
+      id: v4()
+    });
   }
   return(
     <React.Fragment>
@@ -32,5 +37,9 @@ function NewTeaForm(){
     </React.Fragment>
   );
 }
+
+NewTeaForm.propTypes = {
+  onNewTeaCreation: PropTypes.func
+};
 
 export default NewTeaForm;
