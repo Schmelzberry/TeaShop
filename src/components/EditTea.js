@@ -8,12 +8,21 @@ function EditTea(props) {
 
   function handleEditTeaFormSubmission(event) {
     event.preventDefault();
-    props.onEditTea({name: event.target.name.value, origin: event.target.origin.value, price: event.target.price.value, type: event.target.type.value, id: tea.id, quantity: tea.quantity});
+    props.onEditTea({
+      name: event.target.name.value,
+      origin: event.target.origin.value,
+      price: event.target.price.value, 
+      type: event.target.type.value, 
+      id: tea.id, 
+      quantity: parseInt(event.target.quantity.value, 10) || 0,
+    });
   }
 
-  
+
+
   return (
     <React.Fragment>
+      <h2>Edit Tea Information Below:</h2>
       <ReuseForm
       formSubmissionHandler={handleEditTeaFormSubmission}
         buttonText="Update Tea" />

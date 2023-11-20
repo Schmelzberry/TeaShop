@@ -10,10 +10,10 @@ function TeaList(props) {
       {props.teaList.map((tea) =>
        < Tea
        whenTeaClicked = { props.onTeaSelection }
-       quantity={tea.quantity}
        name={tea.name}
        id={tea.id}
        key={tea.id}
+       quantity={tea.quantity}
        />
       )}
     </React.Fragment>
@@ -22,7 +22,7 @@ function TeaList(props) {
 
 TeaList.propTypes = {
   teaList:PropTypes.array,
-  onTeaSelection: PropTypes. func
+  onTeaSelection: PropTypes.func
 };
 
 export default TeaList;

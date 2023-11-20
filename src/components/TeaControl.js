@@ -67,6 +67,37 @@ class TeaControl extends React.Component {
         selectedTea: null
       });
   }
+
+  handleDecreaseQuantity = () => {
+    const { selectedTea } = this.state;
+    if (selectedTea) {
+      const updatedTea = {
+        ...selectedTea,
+        quantity: selectedTea.quantity - 1,
+      };
+      this.setState({
+        mainTeaList: this.state.mainTeaList.map((tea) =>
+          tea.id === selectedTea.id ? updatedTea : tea
+        ),
+        selectedTea: updatedTea,
+      });
+    }
+  };
+
+  handleSellTea = (teaId) => {
+    const updatedTeaList = this.state.mainTeaList.map((tea) => {
+      if (tea.id === teaId && tea.quantity > 0) {
+        return { ...tea, quantity: tea.quantity - 1 };
+      }
+      return tea;
+    });
+
+    this.setState({
+      mainTeaList: updatedTeaList,
+      selectedTea: { ...this.state.selectedTea, quantity: this.state.selectedTea.quantity - 1 },
+    });
+  };
+  
   // Conditional Rendering
 
   render() {
@@ -74,7 +105,10 @@ class TeaControl extends React.Component {
     let buttonText = null;
 
     if( this.state.editing ) {
-      currentlySeen = <EditTea tea = {this.state.selectedTea}  onEditTea = {this.handleEditingTeaInList}/>
+      currentlySeen = <EditTea
+      tea = {this.state.selectedTea}
+      onEditTea = {this.handleEditingTeaInList}
+      onDecreaseQuantity={this.handleDecreaseQuantity}/>
       buttonText = "Return to Tea List";
     }
 
@@ -82,7 +116,10 @@ class TeaControl extends React.Component {
       currentlySeen = <TeaDetail
       tea = {this.state.selectedTea}
       onClickingDelete = {this.handleDeletingTea} 
-      onClickingEdit = {this.handleEditClick} />
+      onClickingEdit = {this.handleEditClick} 
+      onSellTea={this.handleSellTea} />
+      
+
       buttonText= "Return to Tea List";
     }
 

@@ -2,7 +2,7 @@
 
 #### By _**Jake Elsberry**_
 
-#### _A react app for managing inventory of a loose leaf  tea shop._
+#### _A react app for managing inventory of a loose leaf tea shop._
 
 ## Technologies Used
 
