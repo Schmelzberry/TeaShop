@@ -68,21 +68,21 @@ class TeaControl extends React.Component {
       });
   }
 
-  handleDecreaseQuantity = () => {
-    const { selectedTea } = this.state;
-    if (selectedTea) {
-      const updatedTea = {
-        ...selectedTea,
-        quantity: selectedTea.quantity - 1,
-      };
-      this.setState({
-        mainTeaList: this.state.mainTeaList.map((tea) =>
-          tea.id === selectedTea.id ? updatedTea : tea
-        ),
-        selectedTea: updatedTea,
-      });
-    }
-  };
+  // handleDecreaseQuantity = () => {
+  //   const { selectedTea } = this.state;
+  //   if (selectedTea) {
+  //     const updatedTea = {
+  //       ...selectedTea,
+  //       quantity: selectedTea.quantity - 1,
+  //     };
+  //     this.setState({
+  //       mainTeaList: this.state.mainTeaList.map((tea) =>
+  //         tea.id === selectedTea.id ? updatedTea : tea
+  //       ),
+  //       selectedTea: updatedTea,
+  //     });
+  //   }
+  // };
 
   handleSellTea = (teaId) => {
     const updatedTeaList = this.state.mainTeaList.map((tea) => {

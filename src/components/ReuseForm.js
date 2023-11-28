@@ -21,13 +21,13 @@ function ReuseForm(props) {
           type='text'
           name='type'
           placeholder='Organic / Non-Organic' />
-           <input
+           {/* <input
           type="text"
           name="quantity"
           defaultValue="130"
           readOnly
           // style={{ display: 'none' }}
-        />
+        /> */}
         <button type='submit'>{props.buttonText}</button>
       </form>
     </React.Fragment>
