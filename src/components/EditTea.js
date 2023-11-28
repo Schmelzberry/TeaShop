@@ -9,12 +9,12 @@ function EditTea(props) {
   function handleEditTeaFormSubmission(event) {
     event.preventDefault();
     props.onEditTea({
-      name: event.target.name.value,
-      origin: event.target.origin.value,
-      price: event.target.price.value, 
-      type: event.target.type.value, 
+      name: event.target.name.value || tea.name,
+      origin: event.target.origin.value || tea.origin,
+      price: event.target.price.value || tea.price, 
+      type: event.target.type.value || tea.type, 
       id: tea.id, 
-      quantity: parseInt(event.target.quantity.value, 10) || 0,
+      quantity:tea.quantity
     });
   }
 
