@@ -23,7 +23,9 @@ _This react application is for tracking the inventory of a tea shop. Different v
 
 2. _Navigate to the root project directory_
 
-3.  _ From root directory, run the node server with bash command: $ npm start_
+3. _Run the command ```$ npm install``` to install all necessary packages and dependencies for project_
+
+4.  _From root directory, run the node server with bash command: ```$ npm start```_
 
 ## Component Diagram
 

@@ -68,21 +68,6 @@ class TeaControl extends React.Component {
       });
   }
 
-  // handleDecreaseQuantity = () => {
-  //   const { selectedTea } = this.state;
-  //   if (selectedTea) {
-  //     const updatedTea = {
-  //       ...selectedTea,
-  //       quantity: selectedTea.quantity - 1,
-  //     };
-  //     this.setState({
-  //       mainTeaList: this.state.mainTeaList.map((tea) =>
-  //         tea.id === selectedTea.id ? updatedTea : tea
-  //       ),
-  //       selectedTea: updatedTea,
-  //     });
-  //   }
-  // };
 
   handleSellTea = (teaId) => {
     const updatedTeaList = this.state.mainTeaList.map((tea) => {
@@ -91,10 +76,14 @@ class TeaControl extends React.Component {
       }
       return tea;
     });
-
+  
+    // Check if the selectedTea is sold out
+    const selectedTea = this.state.selectedTea;
+    const updatedSelectedTea = selectedTea && selectedTea.quantity > 0 ? { ...selectedTea, quantity: selectedTea.quantity - 1 } : null;
+  
     this.setState({
       mainTeaList: updatedTeaList,
-      selectedTea: { ...this.state.selectedTea, quantity: this.state.selectedTea.quantity - 1 },
+      selectedTea: updatedSelectedTea,
     });
   };
   

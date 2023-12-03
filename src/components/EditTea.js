@@ -5,9 +5,12 @@ import PropTypes from "prop-types";
 function EditTea(props) {
 
   const { tea } = props;
+  
 
   function handleEditTeaFormSubmission(event) {
     event.preventDefault();
+
+    
     props.onEditTea({
       name: event.target.name.value || tea.name,
       origin: event.target.origin.value || tea.origin,
