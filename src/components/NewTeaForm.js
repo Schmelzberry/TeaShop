@@ -12,7 +12,7 @@ function NewTeaForm(props){
       origin: event.target.origin.value,
       price: event.target.price.value,
       type: event.target.type.value,
-      quantity: 5,
+      quantity: 130,
       id: v4()
     });
   }

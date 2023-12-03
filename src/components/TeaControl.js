@@ -53,7 +53,6 @@ class TeaControl extends React.Component {
   }
 
   handleEditClick = () => {
-    console.log("handleEditClick reached!");
     this.setState({editing: true});
   }
 
@@ -77,7 +76,7 @@ class TeaControl extends React.Component {
       return tea;
     });
   
-    // Check if the selectedTea is sold out
+   
     const selectedTea = this.state.selectedTea;
     const updatedSelectedTea = selectedTea && selectedTea.quantity > 0 ? { ...selectedTea, quantity: selectedTea.quantity - 1 } : null;
   

@@ -8,19 +8,19 @@ function ReuseForm(props) {
         <input
           type='text'
           name='name'
-          placeholder='Tea Name' />
+          placeholder='Tea Name' /><br />
         <input
           type='text'
           name='origin'
-          placeholder='Country of Origin' />
+          placeholder='Country of Origin' /><br />
         <input
           type='text'
           name='price'
-          placeholder='Price per Pound' />
+          placeholder='Price per Pound' /><br />
         <input
           type='text'
           name='type'
-          placeholder='Organic / Non-Organic' />
+          placeholder='Organic / Non-Organic' /><br />
         <button type='submit'>{props.buttonText}</button>
       </form>
     </React.Fragment>

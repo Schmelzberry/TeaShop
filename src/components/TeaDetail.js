@@ -18,7 +18,7 @@ function TeaDetail(props) {
       <button onClick={handleSellClick}>Sell Tea</button>
       <hr />
       <h4>Change/Remove Tea Below</h4>
-      <button onClick={ onClickingEdit }>Update Tea </button><br></br>
+      <button onClick={ onClickingEdit }>Update Tea Information </button><br></br>
       <button onClick={() => onClickingDelete(tea.id) }>Delete Tea</button>
     </React.Fragment>
   );
