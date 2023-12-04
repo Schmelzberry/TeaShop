@@ -17,7 +17,7 @@
 
 _This react application is for tracking the inventory of a tea shop. Different varieties can be added, edited, and deleted(full CRUD)._
 
-## Setup/Installation Requirements - ADD NPM INSTALL FOR RESUB REQs
+## Setup/Installation Requirements
 
 1.  _Clone project from [Github repository](https://github.com/Schmelzberry/TeaShop)_
 
